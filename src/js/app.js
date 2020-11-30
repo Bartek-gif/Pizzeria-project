@@ -1,8 +1,6 @@
-import {settings, select, classNames} from './settings.js';
-import Product from './components/Product.js';
+import {settings, select, classNames} from './setting.js';
+import Product from './components/product.js';
 import Cart from './components/Cart.js';
-import Booking from './components/Booking.js';
-import LandingPage from './components/MainSite.js';
 
 const app = {
   initPages: function(){
@@ -58,18 +56,6 @@ const app = {
     for(let link of thisApp.navLinks) {
       link.classList.toggle(classNames.nav.active, link.getAttribute('href') == '#' + pageId);
     }
-  },
-  initLanding: function() {
-    const thisApp = this;
-    const landingPageElem = document.querySelector(select.containerOf.landing);
-    thisApp.landingPage = new LandingPage(landingPageElem);
-  },
-  initBooking: function(){
-    const thisApp = this;
-
-    const bookingContainer = document.querySelector(select.containerOf.booking);
-
-    thisApp.booking = new Booking(bookingContainer);
   },
   initMenu: function(){
     const thisApp = this;
